@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head><h3>Simulation</h3>
+<title>Poripsa Chakrabarty Final Project</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<head>
+<body>
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">RRT* motion planning algorithm implementation</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <!--<input type="text" placeholder="Email" class="form-control">-->
+            </div>
+            <div class="form-group">
+              <!--<input type="password" placeholder="Password" class="form-control">-->
+            </div>
+           <!-- <button type="submit" class="btn btn-success">Sign in</button> -->
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary mrketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Welcome to Poripsa's Project</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Project Report</h2>
+          <p>This project deals with find an optimum path from start to goal coordinate using the RRT* algorithm.</p>
+		   <p>1) A point robot was used in this project with single body in 2 dimensinal space. The type of motion model is holonomic however I do plan on implementing non-holonomic constraints in the project. Type of environment is 2 dimensional. Random nodes were generated such that they fall in c-free.</p>
+		   <p>2) Although I would have liked to implement the final path on turtlesim, that is, have the simulated turtlebot move along the final (goal) path, the challenge was more complicated than it seemed. The main problem was to convert the pixel to meter sizes of the pygame module (the graph generated using pygame) and the turtlesim simulation. Further more turtlesim simulation as far as I know can take in only angular and linear velocity commands (if not using OMPL libraries or motion planning already generated for turtlebot)whereas the nodes generated are digital. Integrating all this was a challenge.</p>
+           <p>3) Since I did not want to define nodes as an object of a class (there is no particular reason to this except that almost all available sample motion planning programs define a class and nodes as their objects), I got to experiment with dictionaries, something I had not used before. Even though the journey to the final version was took a lot of effort and research I am happy to have implemented RRT* using dictionaries and lists.</p>
+		   <p>4) Some things which I could not complete to my satisfaction was collision detection of the path planner with objects and also generating RRT* with non-holonomic constraints. Though the code is developed, it could not be successfully implemented under present time constraints. However I plan on working on my program further and inclusing collision detection as well as non-holonomic constraints.</p>
+		   <p>4) List of sources referenced for this project: https://docs.python.org/, Class documents on RRT*, RRT* RSS 2010 conference paper, RRT* IJRR2011 journal paper, Planning Algorithms by Lavalle, Motion Planning Algorithm RRT star( RRT* ) Python Code Implementation by Md Mahbubur Rahman, www.pygame.org</p>
+		   <p>5) The following image shows one of the output of my implementation of RRT algorithm. 1000 interations of the algorithm was done and the goal (in red) was traversed to from the start node. The final motion path taken by the algorithm is shown in pink:</p>
+		   <div><img src = "CaptureOutput.jpg"</div><p>6) The following image shows my implentation of RRT* algorithm iterated 500 times:</p><img src = "CaptureOutput3.jpg"</div>
+		   <p>7) In the image below the program was made to iterate for 1000 times and as can be seen gives a better path:</p><img src = "CaptureOutput4.jpg"</div>
+		   <p>In conclusion there was a lot of things to learn in this project more so from the immense lot of research which went into concepts which were eventually discarded for the scope of this project and time. Trying to implement path planning on turtlebot resulted in me learning a lot of things about, specially on how the turtlebot itself plans its course using OMPL libraries. Morever having never developed a code from an algorithm using data structures, I certainly learned a lot in terms of programming as well, specially when it was done using a language I had not known previously. I think more than anything this project helped me learn about data structures and algorithm implementation as well as python.</p>
+		</div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2015 Poripsa, Inc. Master's of Electronics UNC Charlotte</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  
+</body>
+</html>
